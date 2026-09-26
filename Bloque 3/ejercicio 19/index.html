@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio - Formulario de Registro en 2 Pasos</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="container">
+        <section class="form-card">
+            <h1>Registro de Usuario</h1>
+            <p class="subtitle">Completa el formulario para crear tu cuenta.</p>
+
+            <!-- Radio buttons ocultos para controlar la navegación entre el Paso 1 y Paso 2 -->
+            <input type="radio" name="step" id="step-1" class="step-radio" checked>
+            <input type="radio" name="step" id="step-2" class="step-radio">
+
+            <!-- Indicador visual del progreso de pasos -->
+            <div class="step-indicator">
+                <div class="step-step step-1-label">1. Datos Personales</div>
+                <div class="step-step step-2-label">2. Cuenta</div>
+            </div>
+
+            <form action="#" method="POST" novalidate>
+                
+                <!-- PASO 1: Datos Personales -->
+                <div class="form-step step-1-content">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo <span class="required-asterisk" aria-hidden="true">*</span></label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            placeholder="Ej: Juan Pérez" 
+                            required 
+                            autocomplete="name"
+                        >
+                        <span class="error-msg">Por favor ingresa tu nombre completo.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono <span class="required-asterisk" aria-hidden="true">*</span></label>
+                        <input 
+                            type="tel" 
+                            id="telefono" 
+                            name="telefono" 
+                            placeholder="Ej: +543442123456" 
+                            required 
+                            pattern="[0-9+ ]{8,15}"
+                        >
+                        <span class="error-msg">Ingresa un número telefónico válido (mínimo 8 dígitos).</span>
+                    </div>
+
+                    <div class="button-group">
+                        <label for="step-2" class="btn btn-next">Siguiente →</label>
+                    </div>
+                </div>
+
+                <!-- PASO 2: Datos de la Cuenta -->
+                <div class="form-step step-2-content">
+                    <div class="form-group">
+                        <label for="email">Correo electrónico <span class="required-asterisk" aria-hidden="true">*</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="ejemplo@correo.com" 
+                            required 
+                            autocomplete="email"
+                        >
+                        <span class="error-msg">Ingresa un correo electrónico válido.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Contraseña <span class="required-asterisk" aria-hidden="true">*</span></label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Mínimo 6 caracteres" 
+                            required 
+                            minlength="6"
+                        >
+                        <span class="error-msg">La contraseña debe tener al menos 6 caracteres.</span>
+                    </div>
+
+                    <div class="button-group">
+                        <label for="step-1" class="btn btn-prev">← Anterior</label>
+                        <button type="submit" class="btn btn-submit">Registrarse</button>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

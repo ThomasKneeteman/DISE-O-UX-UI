@@ -1,0 +1,100 @@
+/* Reinicio básico de estilos y modelo de caja */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables globales de color y estilo */
+:root {
+    --primary-color: #1e293b;
+    --accent-color: #2563eb;
+    --text-color: #0f172a;
+    --text-light: #64748b;
+    --bg-color: #f8fafc;
+    --nav-bg: #ffffff;
+    --border-color: #e2e8f0;
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+/* Contenedor del encabezado */
+.header {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Barra de navegación principal usando Flexbox */
+.navbar {
+    display: flex; /* Activación del modelo Flexbox */
+    justify-content: space-between; /* Distribuye el logo a la izquierda y la lista a la derecha */
+    align-items: center; /* Alineación vertical al centro de todos los elementos */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+/* Estilos para el Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.logo-icon {
+    color: var(--accent-color);
+    font-weight: 800;
+}
+
+/* Lista de enlaces usando Flexbox */
+.nav-links {
+    display: flex; /* Convierte los <li> verticales en una fila horizontal */
+    align-items: center; /* Alineación vertical centrada de las opciones */
+    gap: 2rem; /* Separación constante entre cada enlace */
+    list-style: none; /* Quita los viñetas de la lista */
+}
+
+/* Estilos de los enlaces de navegación */
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+/* Efecto al pasar el cursor por los enlaces */
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Sección de contenido de demostración */
+.content {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.content p {
+    color: var(--text-light);
+}

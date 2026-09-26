@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio - Selectores y Especificidad CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado principal identificado por ID -->
+    <header id="main-header">
+        <h1>Demostración de Selectores CSS</h1>
+        <p>Aplicando clases, IDs y selectores descendientes.</p>
+    </header>
+
+    <main class="content-container">
+
+        <!-- Tarjeta 1 (Clase reutilizable .card) -->
+        <article class="card" id="featured-card">
+            <div class="card-header">
+                <h2>Tarjeta Destacada</h2>
+                <span class="badge">Novedad</span>
+            </div>
+            <p>Este párrafo está dentro de una tarjeta destacada y utiliza estilos descendientes.</p>
+            <p>Un segundo párrafo para comprobar el selector descendiente <span class="highlight">con un texto resaltado</span>.</p>
+        </article>
+
+        <!-- Tarjeta 2 -->
+        <article class="card">
+            <div class="card-header">
+                <h2>Tarjeta Estándar</h2>
+                <span class="badge">Informativo</span>
+            </div>
+            <p>Este párrafo pertenece a una tarjeta común y comparte la clase <code>.card</code>.</p>
+            <p>Los elementos <span class="highlight">span resaltados</span> cambian de color según su contexto.</p>
+        </article>
+
+    </main>
+
+</body>
+</html>

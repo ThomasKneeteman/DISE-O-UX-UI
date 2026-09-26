@@ -1,0 +1,95 @@
+/* Estilos globales y reset basico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #2c3e50;
+  padding: 16px;
+}
+
+/* Enfoque Mobile-First (Base para pantallas menores a 768px) */
+/* El grid por defecto es de 1 sola columna */
+.contenedor-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "contenido"
+    "footer";
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* En móviles, el sidebar no se muestra */
+.sidebar {
+  display: none;
+  grid-area: sidebar;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.header {
+  grid-area: header;
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contenido-principal {
+  grid-area: contenido;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Breakpoint 1: Tablet (768px en adelante) */
+/* Aparece el sidebar y la estructura pasa a 2 columnas */
+@media (min-width: 768px) {
+  .contenedor-layout {
+    grid-template-columns: 240px 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar contenido"
+      "footer footer";
+    gap: 20px;
+  }
+
+  .sidebar {
+    display: block;
+  }
+}
+
+/* Breakpoint 2: Desktop (1024px en adelante) */
+/* Se reajusta el ancho del sidebar y los espaciados para pantallas mas grandes */
+@media (min-width: 1024px) {
+  .contenedor-layout {
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    padding: 10px;
+  }
+
+  body {
+    padding: 32px;
+  }
+}

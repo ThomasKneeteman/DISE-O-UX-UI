@@ -1,0 +1,134 @@
+/* Reinicio básico de estilos y modelo de caja */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables globales */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --tooltip-bg: #0f172a;
+    --tooltip-text: #ffffff;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #334155;
+    --border-color: #e2e8f0;
+}
+
+/* Permitir desplazamiento suave al hacer clic en enlaces de ancla */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+}
+
+/* Contenedor de contenido */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.dummy-section {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    min-height: 300px;
+}
+
+/* Contenedor del Tooltip (Requiere position: relative) */
+.tooltip-container {
+    position: relative; /* Establece el contexto de posicionamiento para el tooltip hijo */
+    display: inline-block;
+    margin: 2rem 0;
+}
+
+.info-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Tooltip desplegable con position: absolute */
+.tooltip-text {
+    position: absolute; /* Posicionamiento relativo al .tooltip-container */
+    bottom: 125%; /* Se ubica por encima del botón */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente el tooltip */
+    background-color: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    padding: 0.5rem 0.85rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0; /* Oculto por defecto */
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 10; /* Asegura que el tooltip se dibuje sobre otros elementos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Flecha decorativa inferior del tooltip */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Justo debajo del tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--tooltip-bg) transparent transparent transparent;
+}
+
+/* Visualización del tooltip al hacer hover sobre el contenedor */
+.tooltip-container:hover .tooltip-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Botón "Volver arriba" con position: fixed */
+.back-to-top {
+    position: fixed; /* Mantiene la posición fija respecto a la ventana del navegador */
+    bottom: 2rem; /* Distancia desde el borde inferior */
+    right: 2rem; /* Distancia desde el borde derecho */
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 100; /* Prioridad alta para permanecer sobre todo el contenido */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.back-to-top:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+}

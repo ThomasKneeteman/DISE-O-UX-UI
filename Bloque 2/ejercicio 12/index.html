@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio - Posicionamiento Fixed y Absolute</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="content">
+        <h1>Demostración de Posicionamiento CSS</h1>
+        <p>Haz scroll hacia abajo para probar el botón "Volver arriba" fijo en la esquina inferior derecha.</p>
+
+        <!-- Elemento contenedor con tooltip -->
+        <div class="tooltip-container">
+            <button class="info-btn">Pasa el cursor por aquí</button>
+            <!-- Tooltip posicionado de forma absoluta relativo al contenedor -->
+            <span class="tooltip-text">¡Hola! Soy un tooltip flotante.</span>
+        </div>
+
+        <!-- Secciones de relleno para generar scroll en la página -->
+        <section class="dummy-section">
+            <h2>Sección 1</h2>
+            <p>Contenido extenso para permitir el desplazamiento vertical...</p>
+        </section>
+
+        <section class="dummy-section">
+            <h2>Sección 2</h2>
+            <p>Sigue haciendo scroll para observar cómo el botón de volver arriba permanece inmóvil en la ventana.</p>
+        </section>
+
+        <section class="dummy-section">
+            <h2>Sección 3</h2>
+            <p>El botón fijo utiliza z-index para asegurar que siempre quede por encima del contenido.</p>
+        </section>
+    </main>
+
+    <!-- Botón flotante "Volver arriba" posicionado con position: fixed -->
+    <a href="#" class="back-to-top" aria-label="Volver arriba">
+        ↑
+    </a>
+
+</body>
+</html>

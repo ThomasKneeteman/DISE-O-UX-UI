@@ -1,0 +1,291 @@
+/* Definición de variables CSS globales */
+:root {
+  /* Paleta de colores principal */
+  --color-primario: #2563eb;
+  --color-primario-hover: #1d4ed8;
+  --color-secundario: #0f172a;
+  --color-fondo: #f8fafc;
+  --color-tarjeta: #ffffff;
+  --color-texto: #334155;
+  --color-texto-claro: #f8fafc;
+  --color-borde: #e2e8f0;
+
+  /* Tipografía y Espaciados */
+  --fuente-principal: system-ui, -apple-system, sans-serif;
+  --espaciado-pequeno: 8px;
+  --espaciado-medio: 16px;
+  --espaciado-grande: 32px;
+  --espaciado-seccion: 80px;
+  --radio-borde: 12px;
+  --sombra-tarjeta: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Modo oscuro opcional */
+body.modo-oscuro {
+  --color-fondo: #0f172a;
+  --color-tarjeta: #1e293b;
+  --color-texto: #f1f5f9;
+  --color-borde: #334155;
+  --sombra-tarjeta: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset de estilos globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Requisito: Scroll suave para el navbar fijo */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+/* Animación requerida para la sección Hero */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Encabezado y Navegación Fija */
+.header-fijo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-tarjeta);
+  border-bottom: 1px solid var(--color-borde);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+.menu-navegacion {
+  display: flex;
+  list-style: none;
+  gap: var(--espaciado-grande);
+}
+
+.menu-navegacion a {
+  text-decoration: none;
+  color: var(--color-texto);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu-navegacion a:hover {
+  color: var(--color-primario);
+}
+
+/* Sección Hero con imagen de fondo y superposición */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
+              url('https://picsum.photos/1920/1080?random=1') center/cover no-repeat;
+  color: var(--color-texto-claro);
+  padding: 0 var(--espaciado-medio);
+}
+
+.hero-contenido {
+  max-width: 800px;
+  animation: aparecer 1s ease-out;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: var(--espaciado-medio);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: var(--espaciado-grande);
+}
+
+.boton-cta {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  border-radius: var(--radio-borde);
+  font-weight: 600;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.boton-cta:hover {
+  background-color: var(--color-primario-hover);
+}
+
+/* Sección de Servicios maquetada con CSS Grid */
+.seccion {
+  padding: var(--espaciado-seccion) var(--espaciado-medio);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 48px;
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espaciado-grande);
+}
+
+.tarjeta-servicio {
+  background-color: var(--color-tarjeta);
+  padding: var(--espaciado-grande);
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-tarjeta);
+  transition: transform 0.3s;
+}
+
+.tarjeta-servicio:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta-servicio h3 {
+  color: var(--color-primario);
+  margin-bottom: var(--espaciado-medio);
+}
+
+/* Sección de Testimonios con Carrusel Horizontal usando Scroll-Snap */
+.contenedor-carrusel {
+  display: flex;
+  gap: var(--espaciado-grande);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--espaciado-medio);
+}
+
+.tarjeta-testimonio {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  background-color: var(--color-tarjeta);
+  padding: var(--espaciado-grande);
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-tarjeta);
+  text-align: center;
+}
+
+.tarjeta-testimonio p {
+  font-style: italic;
+  margin-bottom: var(--espaciado-medio);
+}
+
+.tarjeta-testimonio h4 {
+  color: var(--color-primario);
+}
+
+/* Sección de Contacto con Formulario */
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-medio);
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--color-tarjeta);
+  padding: var(--espaciado-grande);
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-pequeno);
+}
+
+.campo-form label {
+  font-weight: 600;
+}
+
+.campo-form input,
+.campo-form textarea {
+  padding: 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: inherit;
+}
+
+/* Pie de página */
+.footer {
+  background-color: var(--color-secundario);
+  color: var(--color-texto-claro);
+  padding: 40px var(--espaciado-medio);
+  text-align: center;
+}
+
+.contenido-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-medio);
+  align-items: center;
+}
+
+/* Breakpoint 1: Tablets y pantallas medianas (768px o mas) */
+@media (min-width: 768px) {
+  .tarjeta-testimonio {
+    flex: 0 0 calc(50% - (var(--espaciado-grande) / 2));
+  }
+
+  .contenido-footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Breakpoint 2: Escritorio (1024px o mas) */
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .tarjeta-testimonio {
+    flex: 0 0 calc(33.333% - (var(--espaciado-grande) * 2 / 3));
+  }
+}

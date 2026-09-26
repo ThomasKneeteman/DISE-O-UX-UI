@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables CSS y Modo Oscuro</title>
+  <style>
+    /* Definición de variables globales en el alcance raíz */
+    :root {
+      /* Paleta de colores para modo claro */
+      --color-fondo: #f4f6f8;
+      --color-tarjeta: #ffffff;
+      --color-texto: #2c3e50;
+      --color-primario: #3498db;
+      --color-secundario: #2ecc71;
+      --color-borde: #e0e0e0;
+
+      /* Variables de maquetación y tipografía */
+      --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --espaciado-base: 16px;
+      --espaciado-largo: 32px;
+      --radio-borde: 12px;
+      --sombra-caja: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Sobrescritura de variables cuando se activa el modo oscuro */
+    body.modo-oscuro {
+      --color-fondo: #121212;
+      --color-tarjeta: #1e1e1e;
+      --color-texto: #f1f1f1;
+      --color-primario: #bb86fc;
+      --color-secundario: #03dac6;
+      --color-borde: #333333;
+      --sombra-caja: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Aplicación de variables a las propiedades de la página */
+    body {
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      font-family: var(--fuente-principal);
+      padding: var(--espaciado-largo);
+      margin: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Estilos del contenedor principal utilizando variables de bordes y sombras */
+    .tarjeta {
+      background-color: var(--color-tarjeta);
+      border: 2px solid var(--color-borde);
+      border-radius: var(--radio-borde);
+      box-shadow: var(--sombra-caja);
+      padding: var(--espaciado-largo);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Color primario aplicado al título */
+    .titulo {
+      color: var(--color-primario);
+      margin-bottom: var(--espaciado-base);
+    }
+
+    /* Estilos del botón con color secundario y espaciado dinámico */
+    .boton {
+      background-color: var(--color-secundario);
+      color: #ffffff;
+      border: none;
+      padding: var(--espaciado-base);
+      border-radius: var(--radio-borde);
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .boton:hover {
+      filter: brightness(0.9);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="tarjeta">
+    <h1 class="titulo">Variables Custom en CSS</h1>
+    <p>Este componente utiliza variables CSS globales para mantener consistencia visual y facilitar la implementación de un modo oscuro.</p>
+    
+    <button class="boton" onclick="alternarModoOscuro()">Alternar Modo Oscuro</button>
+  </main>
+
+  <script>
+    /* Función para alternar la clase del modo oscuro en el body */
+    function alternarModoOscuro() {
+      document.body.classList.toggle('modo-oscuro');
+    }
+  </script>
+
+</body>
+</html>

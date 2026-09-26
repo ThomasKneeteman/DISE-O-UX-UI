@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio - Animaciones CSS con Keyframes</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="container">
+        <!-- Tarjeta con animación fade-in + slide-up -->
+        <article class="card">
+            <div class="card-header">
+                <h2>Tarjeta Animada</h2>
+                <span class="badge">Novedad</span>
+            </div>
+            
+            <p class="card-body">
+                Esta tarjeta aparece suavemente mediante la combinación de un efecto de transparencia (fade-in) y una elevación desde abajo (slide-up) definida con <code>@keyframes</code>.
+            </p>
+
+            <div class="card-footer">
+                <!-- Botón con spinner de carga con rotación infinita -->
+                <button class="btn-loading">
+                    <span class="spinner" aria-hidden="true"></span>
+                    <span>Cargando datos...</span>
+                </button>
+            </div>
+        </article>
+    </main>
+
+</body>
+</html>

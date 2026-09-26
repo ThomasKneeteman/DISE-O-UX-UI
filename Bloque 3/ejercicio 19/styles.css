@@ -1,0 +1,213 @@
+/* Reinicio básico de estilos y modelo de caja */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables globales */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --success-color: #16a34a;
+    --success-bg: #f0fdf4;
+    --error-color: #dc2626;
+    --error-bg: #fef2f2;
+    --bg-color: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-color: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #cbd5e1;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+}
+
+.form-card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* Ocultamiento de los radio buttons de control */
+.step-radio {
+    display: none;
+}
+
+/* Indicador de Pasos */
+.step-indicator {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.step-step {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #f1f5f9;
+    color: var(--text-muted);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Transición y alternancia de los pasos mediante el truco de :checked y selectores de hermanos ~ */
+#step-1:checked ~ .step-indicator .step-1-label,
+#step-2:checked ~ .step-indicator .step-2-label {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Ocultamiento por defecto de las secciones de pasos */
+.form-step {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Muestra el paso correspondiente al radio button seleccionado */
+#step-1:checked ~ form .step-1-content,
+#step-2:checked ~ form .step-2-content {
+    display: block;
+    opacity: 1;
+}
+
+/* Campos de Formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--text-color);
+}
+
+.required-asterisk {
+    color: var(--error-color);
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #f8fafc;
+    color: var(--text-color);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* Feedback visual mediante pseudo-clases :valid e :invalid (solamente en campos requeridos al interactuar/modificar) */
+input:required:not(:placeholder-shown):valid {
+    border-color: var(--success-color);
+    background-color: var(--success-bg);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+input:required:not(:placeholder-shown):invalid {
+    border-color: var(--error-color);
+    background-color: var(--error-bg);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+/* Mensaje de error dinámico */
+.error-msg {
+    display: none;
+    font-size: 0.8rem;
+    color: var(--error-color);
+    margin-top: 0.35rem;
+    font-weight: 500;
+}
+
+input:required:not(:placeholder-shown):invalid ~ .error-msg {
+    display: block;
+}
+
+/* Grupo de botones */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    border: none;
+}
+
+.btn-next,
+.btn-submit {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-next:hover,
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-prev {
+    background-color: #e2e8f0;
+    color: var(--text-color);
+}
+
+.btn-prev:hover {
+    background-color: #cbd5e1;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}

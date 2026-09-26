@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio - Menú Responsive con Checkbox Hack</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">MiMarca</span>
+            </a>
+
+            <!-- Checkbox oculto para controlar el estado del menú -->
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox" aria-label="Abrir menú de navegación">
+
+            <!-- Label asociado que actúa como botón hamburguesa -->
+            <label for="menu-toggle" class="menu-button" aria-hidden="true">
+                <span class="hamburger-icon"></span>
+            </label>
+
+            <!-- Lista de enlaces de navegación -->
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>Navegación Responsive Sin JavaScript</h1>
+        <p>Achica el tamaño de la ventana del navegador para ver el ícono de menú hamburguesa. Al presionar el ícono, el menú se despliega mediante la pseudo-clase <code>:checked</code> y el selector de hermanos adyacentes <code>~</code>.</p>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+/* Reinicio básico de estilos y modelo de caja */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables globales de color y estilo */
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --alt-bg: #f1f5f9;
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Lista principal de enlaces */
+.link-list {
+    list-style: none;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Pseudo-clase 1: :nth-child(even) para alternar el fondo de filas pares */
+.link-list li:nth-child(even) {
+    background-color: var(--alt-bg);
+}
+
+/* Estilos base de los enlaces dentro de la lista */
+.link-list a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+/* Pseudo-elemento: ::before para insertar un ícono decorativo (flecha) antes del texto */
+.link-list a::before {
+    content: "→";
+    margin-right: 0.75rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+/* Pseudo-clase 2: :hover para cambiar el color e interactividad al pasar el cursor */
+.link-list a:hover {
+    background-color: #eff6ff;
+    color: var(--primary-dark);
+    padding-left: 1.5rem;
+}
+
+/* Animación del pseudo-elemento ::before combinado con :hover */
+.link-list a:hover::before {
+    transform: translateX(4px);
+}

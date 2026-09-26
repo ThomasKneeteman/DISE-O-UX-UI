@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Horario Semanal de Clases</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Horario Semanal de Clases</h1>
+
+        <div class="table-wrapper">
+            <table>
+                <caption>Cronograma de asignaturas - Ciclo Lectivo 2026</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Lunes</th>
+                        <th scope="col">Martes</th>
+                        <th scope="col">Miércoles</th>
+                        <th scope="col">Jueves</th>
+                        <th scope="col">Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">08:00 - 10:00</th>
+                        <td>Matemática Discreta</td>
+                        <td rowspan="2">Programación Orientada a Objetos</td>
+                        <td>Matemática Discreta</td>
+                        <td>Análisis de Sistemas</td>
+                        <td>Bases de Datos</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10:00 - 12:00</th>
+                        <td>Álgebra</td>
+                        <td>Álgebra</td>
+                        <td>Análisis de Sistemas</td>
+                        <td>Bases de Datos</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12:00 - 13:00</th>
+                        <td colspan="5" class="break-cell">Receso / Almuerzo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">13:00 - 15:00</th>
+                        <td>Sistemas Operativos</td>
+                        <td>Inglés Técnico</td>
+                        <td>Sistemas Operativos</td>
+                        <td>Taller de Programación</td>
+                        <td>Inglés Técnico</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6">Total de horas lectivas semanales: 18 horas de cursado presencial.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

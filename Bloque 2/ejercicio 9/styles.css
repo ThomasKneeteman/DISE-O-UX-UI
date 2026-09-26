@@ -1,0 +1,122 @@
+/* RESET BÁSICO Y VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+/* ESTRUCTURA CONTENEDOR PRINCIPAL */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #1e293b;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.contenedor-principal > p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 32px;
+    font-size: 1.05rem;
+}
+
+/* GALERÍA FLEXBOX (REQUISITOS CLAVE) */
+.galeria {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas bajen cuando no hay espacio */
+    gap: 24px;       /* Espaciado uniforme entre filas y columnas */
+    justify-content: center;
+}
+
+/* TARJETAS DE PRODUCTO (.card)*/
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* FLEXBOX EN LAS TARJETAS */
+    /* 
+       flex: flex-grow | flex-shrink | flex-basis
+       - flex-grow: 1 -> Hace que la tarjeta crezca para ocupar espacio disponible.
+       - flex-shrink: 1 -> Permite que encoja si no hay suficiente espacio.
+       - flex-basis: 280px -> Tamaño base inicial de cada tarjeta.
+    */
+    flex: 1 1 280px;
+    max-width: 380px; /* Evita que una sola tarjeta se vuelva gigantesca en pantallas grandes */
+
+    /* Flexbox interno para alinear verticalmente la imagen y el contenido */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen del producto */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Mantiene la proporción sin deformarse */
+    display: block;
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Para que todas las tarjetas mantengan la misma altura */
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.precio {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 16px;
+    margin-top: auto; /* Empuja el precio y el botón hacia el fondo de la tarjeta */
+}
+
+/* Botón de compra */
+.btn {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}

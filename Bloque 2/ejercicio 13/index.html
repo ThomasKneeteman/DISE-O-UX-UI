@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio - Formulario Estilizado con Transiciones</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <section class="form-card">
+            <h1>Contacto</h1>
+            <p class="subtitle">Completa el formulario para ponernos en contacto contigo.</p>
+
+            <form action="#" method="POST" novalidate>
+                <!-- Campo Nombre -->
+                <div class="form-group">
+                    <label for="nombre">Nombre completo <span class="required-asterisk" aria-hidden="true">*</span></label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        name="nombre" 
+                        placeholder="Ej: Juan Pérez" 
+                        required 
+                        autocomplete="name"
+                    >
+                </div>
+
+                <!-- Campo Email -->
+                <div class="form-group">
+                    <label for="email">Correo electrónico <span class="required-asterisk" aria-hidden="true">*</span></label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="ejemplo@correo.com" 
+                        required 
+                        autocomplete="email"
+                    >
+                </div>
+
+                <!-- Campo Mensaje -->
+                <div class="form-group">
+                    <label for="mensaje">Mensaje <span class="required-asterisk" aria-hidden="true">*</span></label>
+                    <textarea 
+                        id="mensaje" 
+                        name="mensaje" 
+                        rows="5" 
+                        placeholder="Escribe tu mensaje aquí..." 
+                        required
+                    ></textarea>
+                </div>
+
+                <!-- Botón de Envío -->
+                <button type="submit" class="submit-btn">Enviar mensaje</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio - Layout con Grid Template Areas</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contenedor principal Grid -->
+    <div class="grid-container">
+        
+        <!-- Encabezado del sitio -->
+        <header class="header">
+            <h1>Mi Sitio Web Grid</h1>
+        </header>
+
+        <!-- Barra lateral (Sidebar) -->
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">Panel Principal</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Reportes</a></li>
+                    <li><a href="#">Configuración</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <h2>Contenido Principal</h2>
+            <p>Este layout utiliza la propiedad <code>grid-template-areas</code> para ubicar de forma explícita las secciones principales del sitio.</p>
+            <p>Gracias a la estructura de rejilla, evitamos huecos no deseados y logramos una maquetación limpia y semántica.</p>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="footer">
+            <p>&copy; 2026 Mi Sitio Web. Todos los derechos reservados.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

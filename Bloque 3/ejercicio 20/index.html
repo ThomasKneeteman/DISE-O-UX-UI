@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Completa - Solución TP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header fijo con navegación -->
+  <header class="header-fijo">
+    <div class="nav-contenedor">
+      <div class="logo">MiEmpresa</div>
+      <nav>
+        <ul class="menu-navegacion">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sección Hero con imagen de fondo -->
+    <section id="inicio" class="hero">
+      <div class="hero-contenido">
+        <h1>Transformamos tus ideas digitales</h1>
+        <p>Soluciones web modernas, responsivas y optimizadas para el máximo rendimiento.</p>
+        <a href="#contacto" class="boton-cta">Comenzar Ahora</a>
+      </div>
+    </section>
+
+    <!-- Sección de Servicios en Grid -->
+    <section id="servicios" class="seccion">
+      <h2 class="titulo-seccion">Nuestros Servicios</h2>
+      <div class="grid-servicios">
+        <article class="tarjeta-servicio">
+          <h3>Diseño Web</h3>
+          <p>Interfaces atractivas, accesibles y adaptadas a la identidad de tu marca.</p>
+        </article>
+        <article class="tarjeta-servicio">
+          <h3>Desarrollo Frontend</h3>
+          <p>Maquetación limpia utilizando las últimas especificaciones de HTML5 y CSS3.</p>
+        </article>
+        <article class="tarjeta-servicio">
+          <h3>Optimización SEO</h3>
+          <p>Mejoramos el posicionamiento de tu sitio en los motores de búsqueda.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sección de Testimonios con Carrusel (Scroll-Snap) -->
+    <section id="testimonios" class="seccion">
+      <h2 class="titulo-seccion">Lo que dicen nuestros clientes</h2>
+      <div class="contenedor-carrusel">
+        <article class="tarjeta-testimonio">
+          <p>"Un servicio excelente y profesional. Cumplieron con todos los plazos."</p>
+          <h4>- María García</h4>
+        </article>
+        <article class="tarjeta-testimonio">
+          <p>"El diseño responsivo quedó perfecto en todos los dispositivos móviles."</p>
+          <h4>- Carlos Gómez</h4>
+        </article>
+        <article class="tarjeta-testimonio">
+          <p>"La velocidad y la calidad de maquetación superaron nuestras expectativas."</p>
+          <h4>- Laura Martínez</h4>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="seccion">
+      <h2 class="titulo-seccion">Contacto</h2>
+      <form class="formulario-contacto" action="#" method="post">
+        <div class="campo-form">
+          <label for="nombre">Nombre Completo</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="campo-form">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="campo-form">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="boton-cta">Enviar Mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="contenido-footer">
+      <p>&copy; 2026 MiEmpresa. Todos los derechos reservados.</p>
+      <p>Diseño y Maquetación Web</p>
+    </div>
+  </footer>
+
+</body>
+</html>

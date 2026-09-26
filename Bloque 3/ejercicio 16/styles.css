@@ -1,0 +1,140 @@
+/* Reinicio básico de estilos y modelo de caja */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables globales de color */
+:root {
+    --primary-color: #2563eb;
+    --bg-color: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-color: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+}
+
+/* Estilos base del cuerpo */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+}
+
+/* ==========================================================================
+   1. ANIMACIÓN DE LA TARJETA (Fade-in + Slide-up)
+   ========================================================================== */
+
+/* Declaración de los fotogramas clave para la tarjeta */
+@keyframes cardEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Empieza desplazada 30px abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);    /* Vuelve a su posición original */
+    }
+}
+
+/* Aplicación de la animación a la tarjeta */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+
+    /* Propiedades de la animación requeridas */
+    animation-name: cardEntrance;
+    animation-duration: 0.8s;                  /* Control de duración */
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); /* Curva suave de entrada */
+    animation-iteration-count: 1;              /* Se ejecuta 1 vez */
+    animation-fill-mode: forwards;             /* Mantiene el estado final */
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-header h2 {
+    font-size: 1.35rem;
+    color: var(--text-color);
+}
+
+.badge {
+    background-color: #dbeafe;
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card-body {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+}
+
+/* ==========================================================================
+   2. ANIMACIÓN DEL SPINNER DE CARGA (Spinning)
+   ========================================================================== */
+
+/* Declaración de fotogramas clave para rotación 360° */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-loading {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: wait;
+}
+
+/* Spinner circular */
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+
+    /* Propiedades de la animación del spinner */
+    animation-name: spin;
+    animation-duration: 0.8s;             /* Control de duración */
+    animation-timing-function: linear;    /* Velocidad constante */
+    animation-iteration-count: infinite;  /* Rotación infinita */
+}

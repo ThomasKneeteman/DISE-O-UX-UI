@@ -1,0 +1,84 @@
+/* Reinicio de estilos y modelo de caja */
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box; /* Requisito principal */
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables CSS para mantener consistencia de color y estilo */
+:root {
+    --primary-color: #0f172a;
+    --accent-color: #2563eb;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #334155;
+    --border-color: #cbd5e1;
+}
+
+/* Estilos base para el cuerpo del documento */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 3rem 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor delimitador del contenido */
+.container {
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Encabezado principal */
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+}
+
+/* Disposición y alineación de las tarjetas en fila */
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Margen/espacio uniforme entre las tarjetas */
+    justify-content: center;
+}
+
+/* Aplicación del modelo de caja en las tarjetas */
+.card {
+    /* Base de tamaño para la grilla en fila */
+    flex: 1 1 300px;
+    max-width: 350px;
+
+    /* Propiedades del Modelo de Caja */
+    padding: 1.75rem;                       /* Espaciado interno (padding) */
+    border: 2px solid var(--border-color);  /* Borde externo (border) */
+    border-radius: 8px;                     /* Esquinas redondeadas */
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Variación para comprobar que el box-sizing: border-box mantiene el mismo tamaño */
+.card-featured {
+    padding: 2.25rem;                       /* Relleno más grande */
+    border: 4px solid var(--accent-color);  /* Borde más grueso */
+}
+
+/* Estilos internos para los títulos de las tarjetas */
+.card h2 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem; /* Margen inferior para separar del texto */
+}
+
+/* Estilos internos para los párrafos */
+.card p {
+    font-size: 0.95rem;
+    color: #64748b;
+}

@@ -1,0 +1,102 @@
+:root {
+    --primary-color: #1a365d;
+    --secondary-color: #2b6cb0;
+    --accent-color: #ed8936;
+    --bg-color: #f7fafc;
+    --card-bg: #ffffff;
+    --text-color: #2d3748;
+    --border-color: #e2e8f0;
+    --hover-color: #ebf8ff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.table-wrapper {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+caption {
+    caption-side: top;
+    padding: 0.75rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    background-color: #edf2f7;
+    border-bottom: 2px solid var(--border-color);
+}
+
+thead th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.85rem;
+    font-weight: 600;
+}
+
+tbody th {
+    background-color: #f8fafc;
+    color: var(--primary-color);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 0.75rem 0.5rem;
+    border: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+tbody tr:hover {
+    background-color: var(--hover-color);
+}
+
+.break-cell {
+    background-color: #feebc8;
+    color: #7b341e;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+tfoot td {
+    background-color: #edf2f7;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0.85rem;
+    font-style: italic;
+    border-top: 2px solid var(--border-color);
+}

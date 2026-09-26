@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio - Modelo de Caja</title>
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <!-- Encabezado principal de la sección -->
+        <h1>Sección de Tarjetas</h1>
+        
+        <!-- Contenedor principal para alinear las tarjetas en fila -->
+        <div class="cards-grid">
+
+            <!-- Primera tarjeta -->
+            <div class="card">
+                <h2>Tarjeta 1</h2>
+                <p>Esta tarjeta tiene un relleno estándar y un borde delgado para demostrar la consistencia del tamaño visual.</p>
+            </div>
+
+            <!-- Segunda tarjeta (con border y padding más gruesos) -->
+            <div class="card card-featured">
+                <h2>Tarjeta 2</h2>
+                <p>Incluso con un borde más grueso y mayor padding, mantiene exactamente el mismo ancho total gracias a box-sizing.</p>
+            </div>
+
+            <!-- Tercera tarjeta -->
+            <div class="card">
+                <h2>Tarjeta 3</h2>
+                <p>Tercera tarjeta alineada en la misma fila con márgenes uniformes y estructura homogénea.</p>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

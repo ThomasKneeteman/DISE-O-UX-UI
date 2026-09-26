@@ -1,0 +1,74 @@
+/* Reset básico para evitar desbordamientos y margenes por defecto */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  padding: 20px;
+}
+
+/* Configuración de la Galería con CSS Grid */
+.galeria {
+  display: grid;
+  /* Define columnas automáticas con un ancho mínimo de 180px */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  /* Fija la altura de las filas implícitas */
+  grid-auto-rows: 180px;
+  /* Activa el algoritmo que rellena huecos vacíos de forma automática */
+  grid-auto-flow: dense;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilos de las tarjetas de la galería */
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #2a2a2a;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  /* Mantiene la proporción de la imagen sin deformarla */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+/* Clases modificadoras para dar variabilidad de tamaños */
+
+/* Requisito principal: Elemento que ocupa 2 columnas y 2 filas */
+.item.destacado {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Elemento ancho: ocupa 2 columnas */
+.item.ancho {
+  grid-column: span 2;
+}
+
+/* Elemento alto: ocupa 2 filas */
+.item.alto {
+  grid-row: span 2;
+}
+
+/* Ajuste responsive para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .item.destacado,
+  .item.ancho {
+    grid-column: span 1;
+  }
+}
